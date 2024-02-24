@@ -91,6 +91,39 @@ export const GlobalStyles = StyleSheet.create({
     paddingTop: light.theme.spacings[10],
     paddingBottom: light.theme.spacings[10],
   },
+  alignItemsCenter: {
+    alignItems: 'center',
+  },
+  alignItemsFlexStart: {
+    alignItems: 'flex-start',
+  },
+  alignItemsFlexEnd: {
+    alignItems: 'flex-end',
+  },
+  alignItemsBaseline: {
+    alignItems: 'baseline',
+  },
+  alignItemsStretch: {
+    alignItems: 'stretch',
+  },
+  justifyContentCenter: {
+    justifyContent: 'center',
+  },
+  justifyContentFlexStart: {
+    justifyContent: 'flex-start',
+  },
+  justifyContentFlexEnd: {
+    justifyContent: 'flex-end',
+  },
+  justifyContentSpaceBetween: {
+    justifyContent: 'space-between',
+  },
+  justifyContentSpaceAround: {
+    justifyContent: 'space-around',
+  },
+  justifyContentSpaceEvenly: {
+    justifyContent: 'space-evenly',
+  },
   textCenter: {
     textAlign: 'center',
   },

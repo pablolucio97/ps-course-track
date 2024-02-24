@@ -1,3 +1,4 @@
+import { IMAGE_TRANSITION_MS_SLOW } from '@appConstants/miscellaneous';
 import { BorderlessButton } from '@components/Buttons/BorderlessButton';
 import { PersonalSignInButton } from '@components/Buttons/PersonalSignInButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
@@ -19,7 +20,6 @@ import { Container, FormContainer, ImageContainer, Styles } from './styles';
 
 export function InitialScreen() {
   const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
-  const IMAGE_TRANSITION_MS = 800;
   const [isAuthenticated] = useState(false);
   const [hasStoreUpdates] = useState(false);
   const navigation = useNavigation<TAuthRoutesStack>();
@@ -38,7 +38,7 @@ export function InitialScreen() {
           style={Styles.image}
           source={require(bgImgPath)}
           contentFit="cover"
-          transition={IMAGE_TRANSITION_MS}
+          transition={IMAGE_TRANSITION_MS_SLOW}
         />
       </ImageContainer>
       <FormContainer>
