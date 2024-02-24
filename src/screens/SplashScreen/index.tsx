@@ -1,14 +1,14 @@
 /* eslint-disable quotes */
 import { useNavigation } from '@react-navigation/native';
-import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
+import { TAuthRoutesStack } from '@routes/auth.routes';
 import { useCallback, useEffect } from 'react';
 import Animated, {
-  Extrapolation,
-  interpolate,
-  runOnJS,
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
+    Extrapolation,
+    interpolate,
+    runOnJS,
+    useAnimatedStyle,
+    useSharedValue,
+    withTiming,
 } from 'react-native-reanimated';
 import { SvgXml } from 'react-native-svg';
 import { light as lightTheme } from 'themes/light';
@@ -18,7 +18,7 @@ import { Container, GradientContainer, LogoTitle } from './styles';
 export function SplashScreen() {
   const { theme } = lightTheme;
   const splashAnimationSharedValue = useSharedValue(0);
-  const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const navigation = useNavigation<TAuthRoutesStack>();
 
   const ANIMATION_DURATION = 2400;
   const ANIMATION_INITIAL_VALUE = 0;

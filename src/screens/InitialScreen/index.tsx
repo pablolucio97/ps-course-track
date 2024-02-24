@@ -7,7 +7,7 @@ import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Text } from '@components/Typography/Text';
 import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
-import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
+import { TAuthRoutesStack } from '@routes/auth.routes';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
@@ -22,7 +22,7 @@ export function InitialScreen() {
   const IMAGE_TRANSITION_MS = 800;
   const [isAuthenticated] = useState(false);
   const [hasStoreUpdates] = useState(false);
-  const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const navigation = useNavigation<TAuthRoutesStack>();
   const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 

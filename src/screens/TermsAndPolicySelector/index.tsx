@@ -4,7 +4,7 @@ import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { Text } from '@components/Typography/Text';
 import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
-import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
+import { TAuthRoutesStack } from '@routes/auth.routes';
 import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
@@ -13,7 +13,7 @@ import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
 import { Container, FormContainer } from './styles';
 
 export function TermsAndPoliticsSelector() {
-  const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const navigation = useNavigation<TAuthRoutesStack>();
   const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
 

@@ -1,4 +1,3 @@
-import { NavigationContainer } from '@react-navigation/native';
 import { InitialScreen } from '@screens/InitialScreen';
 import { PasswordRecovery } from '@screens/PasswordRecovery';
 import { PolicyPrivacy } from '@screens/PolicyPrivacy';
@@ -25,7 +24,7 @@ export type TAuthRoutes = {
   NewUpdateStore: undefined;
 };
 
-export type TAuthRoutesBottomTabs = StackNavigationProp<TAuthRoutes>;
+export type TAuthRoutesStack = StackNavigationProp<TAuthRoutes>;
 
 const AuthRoutes = () => {
   const StackNavigator = createStackNavigator<TAuthRoutes>();
@@ -86,18 +85,16 @@ const AuthRoutes = () => {
   ];
 
   return (
-    <NavigationContainer>
-      <StackNavigator.Navigator initialRouteName="SplashScreen">
-        {authRoutes.map(route => (
-          <StackNavigator.Screen
-            key={route.name}
-            name={route.name as never}
-            component={route.component}
-            options={route.options as never}
-          />
-        ))}
-      </StackNavigator.Navigator>
-    </NavigationContainer>
+    <StackNavigator.Navigator initialRouteName="SplashScreen">
+      {authRoutes.map(route => (
+        <StackNavigator.Screen
+          key={route.name}
+          name={route.name as never}
+          component={route.component}
+          options={route.options as never}
+        />
+      ))}
+    </StackNavigator.Navigator>
   );
 };
 

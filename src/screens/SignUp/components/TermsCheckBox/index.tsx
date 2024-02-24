@@ -1,15 +1,15 @@
 import { Checkbox, CheckboxProps } from '@components/Miscellaneous/Checkbox';
 import { useNavigation } from '@react-navigation/native';
-import { TAuthRoutesBottomTabs } from '@routes/auth.routes';
+import { TAuthRoutesStack } from '@routes/auth.routes';
 import { light } from '@themes/light';
 import { CSSProperties } from 'styled-components';
 import {
-  Button,
-  ColumnContainer,
-  Container,
-  LinkText,
-  RowContainer,
-  Text,
+    Button,
+    ColumnContainer,
+    Container,
+    LinkText,
+    RowContainer,
+    Text,
 } from './styles';
 
 interface TermsCheckBoxProps extends CheckboxProps {
@@ -17,7 +17,7 @@ interface TermsCheckBoxProps extends CheckboxProps {
 }
 
 export function TermsCheckBox({ checked, onCheck, style }: TermsCheckBoxProps) {
-  const navigation = useNavigation<TAuthRoutesBottomTabs>();
+  const navigation = useNavigation<TAuthRoutesStack>();
   return (
     <Container style={style as never}>
       <Checkbox
