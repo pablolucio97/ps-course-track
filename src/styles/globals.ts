@@ -92,6 +92,86 @@ export const GlobalStyles = StyleSheet.create({
     paddingTop: light.theme.spacings[10],
     paddingBottom: light.theme.spacings[10],
   },
+  paddingLeftSmall: {
+    paddingLeft: light.theme.spacings[2],
+  },
+  paddingLeftMedium: {
+    paddingLeft: light.theme.spacings[5],
+  },
+  paddingLeftLarge: {
+    paddingLeft: light.theme.spacings[8],
+  },
+  paddingLeftExtraLarge: {
+    paddingLeft: light.theme.spacings[10],
+  },
+  paddingRightSmall: {
+    paddingRight: light.theme.spacings[2],
+  },
+  paddingRightMedium: {
+    paddingRight: light.theme.spacings[5],
+  },
+  paddingRightLarge: {
+    paddingRight: light.theme.spacings[8],
+  },
+  paddingRightExtraLarge: {
+    paddingRight: light.theme.spacings[10],
+  },
+  paddingHorizontalSmall: {
+    paddingLeft: light.theme.spacings[2],
+    paddingRight: light.theme.spacings[2],
+  },
+  paddingHorizontalMedium: {
+    paddingLeft: light.theme.spacings[5],
+    paddingRight: light.theme.spacings[5],
+  },
+  paddingHorizontalLarge: {
+    paddingLeft: light.theme.spacings[8],
+    paddingRight: light.theme.spacings[8],
+  },
+  paddingHorizontalExtraLarge: {
+    paddingLeft: light.theme.spacings[10],
+    paddingRight: light.theme.spacings[10],
+  },
+  marginLeftSmall: {
+    marginLeft: light.theme.spacings[2],
+  },
+  marginLeftMedium: {
+    marginLeft: light.theme.spacings[5],
+  },
+  marginLeftLarge: {
+    marginLeft: light.theme.spacings[8],
+  },
+  marginLeftExtraLarge: {
+    marginLeft: light.theme.spacings[10],
+  },
+  marginRightSmall: {
+    marginRight: light.theme.spacings[2],
+  },
+  marginRightMedium: {
+    marginRight: light.theme.spacings[5],
+  },
+  marginRightLarge: {
+    marginRight: light.theme.spacings[8],
+  },
+  marginRightExtraLarge: {
+    marginRight: light.theme.spacings[10],
+  },
+  marginHorizontalSmall: {
+    marginLeft: light.theme.spacings[2],
+    marginRight: light.theme.spacings[2],
+  },
+  marginHorizontalMedium: {
+    marginLeft: light.theme.spacings[5],
+    marginRight: light.theme.spacings[5],
+  },
+  marginHorizontalLarge: {
+    marginLeft: light.theme.spacings[8],
+    marginRight: light.theme.spacings[8],
+  },
+  marginHorizontalExtraLarge: {
+    marginLeft: light.theme.spacings[10],
+    marginRight: light.theme.spacings[10],
+  },
   alignItemsCenter: {
     alignItems: 'center',
   },

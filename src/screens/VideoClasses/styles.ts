@@ -1,10 +1,7 @@
-import { light } from '@themes/light';
-import { StyleSheet } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
-
-const appTheme = light.theme;
 
 export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
@@ -17,26 +14,41 @@ export const Container = styled.View`
   `}
 `;
 
-export const TextContainer = styled.ScrollView`
+export const CollapsibleExpandedContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding: 0 ${RFValue(theme.spacings[2])}px 0;
+    height: auto;
+    background-color: ${theme.colors.background};
+    padding: ${theme.spacings[4]}px;
+    border-radius: ${theme.spacings[3]}px;
+    elevation: 8;
+    shadow-color: ${theme.colors.absolute_black};
+    shadow-offset: ${RFValue(1)}px;
+    shadow-opacity: 0.25;
+    shadow-radius: ${RFValue(4)}px;
   `}
 `;
 
-export const TitleContainer = styled.View`
+export const CollapsibleCollapsedContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    padding: 0 ${RFValue(theme.spacings[2])}px 0;
+    height: auto;
+    padding: ${theme.spacings[2]}px;
+    background-color: ${theme.colors.background};
+    padding: ${theme.spacings[4]}px;
+    border-radius: ${theme.spacings[3]}px;
+    elevation: 8;
+    shadow-color: ${theme.colors.absolute_black};
+    shadow-offset: ${RFValue(1)}px;
+    shadow-opacity: 0.25;
+    shadow-radius: ${RFValue(4)}px;
   `}
 `;
 
-export const Styles = StyleSheet.create({
-  courseImage: {
-    width: '100%',
-    borderRadius: RFValue(8),
-    aspectRatio: '16/9',
-    marginTop: RFValue(appTheme.spacings[3]),
-    marginBottom: RFValue(appTheme.spacings[3]),
-  },
-});
+export const Button = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })`
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    height: auto;
+    padding: ${theme.spacings[2]}px;
+  `}
+`;

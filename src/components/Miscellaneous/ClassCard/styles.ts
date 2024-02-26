@@ -1,4 +1,3 @@
-import { getScreenHeightPercent } from '@utils/layout';
 import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
@@ -42,15 +41,24 @@ export const Text = styled.Text`
 `;
 
 export const CardRowContainer = styled.View`
-  width: ${RFValue(getScreenHeightPercent(80))}px;
+  width: 100%;
   flex-direction: row;
   align-items: center;
 `;
 
+export const ClassSubContainer = styled.View`
+  width: 80%;
+  flex-direction: row;
+`;
+
 export const ClassInfoContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
-    max-width: 100%;
     margin-left: ${RFValue(theme.spacings[2])}px;
-    margin-right: ${RFValue(theme.spacings[9])}px;
+    margin-right: ${RFValue(theme.spacings[2])}px;
   `}
+`;
+
+export const ClassWatchedContainer = styled.View`
+  width: 20%;
+  align-items: flex-end;
 `;

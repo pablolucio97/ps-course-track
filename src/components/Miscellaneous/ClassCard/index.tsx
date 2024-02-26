@@ -2,7 +2,9 @@ import {
   CardContainer,
   CardRowContainer,
   ClassInfoContainer,
+  ClassSubContainer,
   ClassTitle,
+  ClassWatchedContainer,
   Text,
 } from './styles';
 
@@ -27,29 +29,33 @@ export function ClassCard({
   return (
     <CardContainer>
       <CardRowContainer>
-        {wasWatched ? (
-          <MaterialIcons
-            name="replay"
-            size={theme.sizes[7]}
-            color={theme.colors.title}
-          />
-        ) : (
-          <Feather
-            name="play-circle"
-            size={theme.sizes[7]}
-            color={theme.colors.title}
-          />
-        )}
-        <ClassInfoContainer>
-          <ClassTitle>{classTitle}</ClassTitle>
-          <Text>Duração: {classDuration}</Text>
-        </ClassInfoContainer>
+        <ClassSubContainer>
+          {wasWatched ? (
+            <MaterialIcons
+              name="replay"
+              size={theme.sizes[7]}
+              color={theme.colors.title}
+            />
+          ) : (
+            <Feather
+              name="play-circle"
+              size={theme.sizes[7]}
+              color={theme.colors.title}
+            />
+          )}
+          <ClassInfoContainer>
+            <ClassTitle>{classTitle}</ClassTitle>
+            <Text>Duração: {classDuration}</Text>
+          </ClassInfoContainer>
+        </ClassSubContainer>
         {wasWatched && (
-          <Feather
-            name="check-square"
-            size={theme.sizes[5]}
-            color={theme.colors.success}
-          />
+          <ClassWatchedContainer>
+            <Feather
+              name="check-square"
+              size={theme.sizes[5]}
+              color={theme.colors.success}
+            />
+          </ClassWatchedContainer>
         )}
       </CardRowContainer>
     </CardContainer>
