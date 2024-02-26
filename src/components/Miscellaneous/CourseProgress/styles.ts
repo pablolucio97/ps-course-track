@@ -25,7 +25,7 @@ export const Title = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     color: ${theme.colors.subtitle};
     font-size: ${RFValue(theme.fontSizes[6])}px;
-    font-family: ${theme.fonts.primary_700};
+    font-family: ${theme.fonts.primary_500};
   `}
 `;
 

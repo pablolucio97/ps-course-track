@@ -6,6 +6,7 @@ export const RowContainer = styled.View`
   width: 100%;
   flex-direction: row;
 `;
+
 export const ColumnContainer = styled.View`
   width: 100%;
 `;
@@ -15,7 +16,7 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: light.theme.spacings[2],
   },
   marginTopMedium: {
-    marginTop: light.theme.spacings[4],
+    marginTop: light.theme.spacings[5],
   },
   marginTopLarge: {
     marginTop: light.theme.spacings[8],
@@ -24,10 +25,10 @@ export const GlobalStyles = StyleSheet.create({
     marginTop: light.theme.spacings[10],
   },
   marginBottomSmall: {
-    marginTop: light.theme.spacings[2],
+    marginBottom: light.theme.spacings[2],
   },
   marginBottomMedium: {
-    marginBottom: light.theme.spacings[4],
+    marginBottom: light.theme.spacings[5],
   },
   marginBottomLarge: {
     marginBottom: light.theme.spacings[8],
@@ -40,8 +41,8 @@ export const GlobalStyles = StyleSheet.create({
     marginBottom: light.theme.spacings[2],
   },
   marginVerticalMedium: {
-    marginTop: light.theme.spacings[4],
-    marginBottom: light.theme.spacings[4],
+    marginTop: light.theme.spacings[5],
+    marginBottom: light.theme.spacings[5],
   },
   marginVerticalLarge: {
     marginTop: light.theme.spacings[8],
@@ -55,7 +56,7 @@ export const GlobalStyles = StyleSheet.create({
     paddingBottom: light.theme.spacings[2],
   },
   paddingTopMedium: {
-    paddingTop: light.theme.spacings[4],
+    paddingTop: light.theme.spacings[5],
   },
   paddingTopLarge: {
     paddingTop: light.theme.spacings[8],
@@ -67,7 +68,7 @@ export const GlobalStyles = StyleSheet.create({
     paddingBottom: light.theme.spacings[3],
   },
   paddingBottomMedium: {
-    paddingBottom: light.theme.spacings[4],
+    paddingBottom: light.theme.spacings[5],
   },
   paddingBottomLarge: {
     paddingBottom: light.theme.spacings[8],
@@ -80,8 +81,8 @@ export const GlobalStyles = StyleSheet.create({
     paddingBottom: light.theme.spacings[2],
   },
   paddingVerticalMedium: {
-    paddingTop: light.theme.spacings[4],
-    paddingBottom: light.theme.spacings[4],
+    paddingTop: light.theme.spacings[5],
+    paddingBottom: light.theme.spacings[5],
   },
   paddingVerticalLarge: {
     paddingTop: light.theme.spacings[8],
