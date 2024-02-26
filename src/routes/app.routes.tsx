@@ -4,6 +4,7 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import { Home } from '@screens/Home';
+import { VideoClasses } from '@screens/VideoClasses';
 import { Platform } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
@@ -11,6 +12,7 @@ const BottomTab = createBottomTabNavigator();
 
 export type TAppRoutes = {
   Home: undefined;
+  VideoClasses: undefined;
 };
 
 export type TAppRoutesBottomTabs = BottomTabNavigationProp<TAppRoutes>;
@@ -35,6 +37,12 @@ const AppRoutes = () => {
       id: 1,
       name: 'Home',
       component: Home,
+      options: screensConfig,
+    },
+    {
+      id: 1,
+      name: 'VideoClasses',
+      component: VideoClasses,
       options: screensConfig,
     },
   ];
