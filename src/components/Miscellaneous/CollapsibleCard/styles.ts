@@ -13,6 +13,7 @@ export const CollapsibleExpandedContainer = styled.View`
     background-color: ${theme.colors.background};
     padding: ${theme.spacings[2]}px;
     border-radius: ${theme.spacings[3]}px;
+    elevation: 8;
     shadow-color: ${theme.colors.absolute_black};
     shadow-offset: ${RFValue(1)}px;
     shadow-opacity: 0.25;
@@ -24,7 +25,6 @@ export const CollapsibleCollapsedContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
     height: auto;
-    background-color: ${theme.colors.background};
     padding: ${theme.spacings[2]}px;
   `}
 `;
@@ -63,7 +63,6 @@ export const ButtonTitle = styled.Text`
 export const Styles = StyleSheet.create({
   collapsibleContainer: {
     width: '100%',
-    elevation: 8,
     borderRadius: appTheme.sizes[3],
     padding: appTheme.spacings[3],
   },
