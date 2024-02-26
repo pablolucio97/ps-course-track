@@ -10,9 +10,9 @@ export const Container = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })`
 export const CardContainer = styled.View`
   max-width: 100%;
   ${({ theme }: DefaultTheme) => css`
-    background-color: ${theme.colors.cards};
-    padding: ${RFValue(theme.spacings[4])}px;
-    margin-top: ${RFValue(theme.spacings[2])}px;
+    background-color: ${theme.colors.inputs};
+    padding: ${RFValue(theme.spacings[2])}px;
+    margin-top: ${RFValue(theme.spacings[1])}px;
     border-radius: ${RFValue(theme.sizes[2])}px;
   `}
 `;
@@ -27,14 +27,14 @@ export const CardTitle = styled.Text`
 
 export const ClassTitle = styled(CardTitle)`
   ${({ theme }: DefaultTheme) => css`
-    font-size: ${RFValue(theme.fontSizes[5])}px;
+    font-size: ${RFValue(theme.fontSizes[4])}px;
   `}
 `;
 
 export const Text = styled.Text`
   ${({ theme }: DefaultTheme) => css`
     color: ${theme.colors.text};
-    font-size: ${RFValue(theme.fontSizes[5])}px;
+    font-size: ${RFValue(theme.fontSizes[4])}px;
     font-family: ${theme.fonts.primary_400};
     margin-top: ${RFValue(theme.spacings[0])}px;
   `}

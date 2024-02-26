@@ -19,7 +19,7 @@ export const CollapsibleExpandedContainer = styled.View`
     width: 100%;
     height: auto;
     background-color: ${theme.colors.background};
-    padding: ${theme.spacings[4]}px;
+    padding: ${theme.spacings[3]}px;
     border-radius: ${theme.spacings[3]}px;
     elevation: 8;
     shadow-color: ${theme.colors.absolute_black};
@@ -33,9 +33,8 @@ export const CollapsibleCollapsedContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
     height: auto;
-    padding: ${theme.spacings[2]}px;
-    background-color: ${theme.colors.background};
-    padding: ${theme.spacings[4]}px;
+    padding: ${theme.spacings[3]}px;
+    background-color: ${theme.colors.cards};
     border-radius: ${theme.spacings[3]}px;
     elevation: 8;
     shadow-color: ${theme.colors.absolute_black};

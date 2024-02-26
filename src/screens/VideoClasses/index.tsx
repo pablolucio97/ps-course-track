@@ -3,6 +3,7 @@ import { Subtitle } from '@components/Typography/Subtitle';
 import { Text } from '@components/Typography/Text';
 import { Title } from '@components/Typography/Title';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
+import { light } from '@themes/light';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import Collapsible from 'react-native-collapsible';
@@ -26,9 +27,17 @@ export function VideoClasses() {
           <Button onPress={() => setIsCollapsed(!isCollapsed)}>
             <Subtitle
               content="Módulo 1"
-              style={GlobalStyles.marginBottomSmall}
+              style={
+                [
+                  GlobalStyles.marginBottomSmall,
+                  { fontSize: light.theme.sizes[5] },
+                ] as never
+              }
             />
-            <Text content="Expandir móodulo" />
+            <Text
+              content="Expandir móodulo"
+              style={{ fontSize: light.theme.fontSizes[4] }}
+            />
           </Button>
         </CollapsibleCollapsedContainer>
       ) : (
@@ -36,9 +45,17 @@ export function VideoClasses() {
           <Button onPress={() => setIsCollapsed(!isCollapsed)}>
             <Subtitle
               content="Módulo 1"
-              style={GlobalStyles.marginBottomSmall}
+              style={
+                [
+                  GlobalStyles.marginBottomSmall,
+                  { fontSize: light.theme.sizes[5] },
+                ] as never
+              }
             />
-            <Text content="Recolher móodulo" />
+            <Text
+              content="Recolher móodulo"
+              style={{ fontSize: light.theme.fontSizes[4] }}
+            />
           </Button>
           <Collapsible collapsed={isCollapsed}>
             <ClassCard
