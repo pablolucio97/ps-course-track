@@ -38,6 +38,7 @@
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
     "react-native-user-avatar": "^1.0.8",
+    "react-native-uuid": "^2.0.1",
     "styled-components": "5.3.8"
   },
   "devDependencies": {
