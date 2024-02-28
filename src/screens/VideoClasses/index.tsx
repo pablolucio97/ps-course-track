@@ -68,10 +68,31 @@ export function VideoClasses() {
                 }
               />
               <Text
+                content="Sobre este módulo"
+                style={
+                  [
+                    GlobalStyles.marginBottomSmall,
+                    {
+                      fontSize: light.theme.sizes[4],
+                      fontFamily: light.theme.fonts.primary_700,
+                    },
+                  ] as never
+                }
+              />
+              <Text
+                content={videoClass.description}
+                style={
+                  [
+                    GlobalStyles.marginBottomSmall,
+                    { fontSize: light.theme.sizes[4] },
+                  ] as never
+                }
+              />
+              <Text
                 content={
                   collapsedModules.includes(videoClass.id)
-                    ? 'Expandir módulo'
-                    : 'Recolher módulo'
+                    ? 'Exibir aulas'
+                    : 'Mostrar menos'
                 }
                 style={{ fontSize: light.theme.fontSizes[4] }}
               />
