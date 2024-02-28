@@ -7,7 +7,9 @@ export const Container = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })`
   width: 100%;
 `;
 
-export const CardContainer = styled.View`
+export const CardContainer = styled(TouchableOpacity).attrs({
+  activeOpacity: 0.8,
+})`
   max-width: 100%;
   ${({ theme }: DefaultTheme) => css`
     background-color: ${theme.colors.inputs};
@@ -58,7 +60,9 @@ export const ClassInfoContainer = styled.View`
   `}
 `;
 
-export const ClassWatchedContainer = styled.View`
+export const ClassWatchedContainer = styled(TouchableOpacity).attrs({
+  activeOpacity: 0.8,
+})`
   width: 20%;
   align-items: flex-end;
 `;

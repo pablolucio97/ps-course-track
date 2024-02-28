@@ -44,7 +44,7 @@ export default function App() {
   } else {
     SplashScreen.hideAsync();
     return (
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={lightTheme}>
         <Routes />
       </ThemeProvider>
     );

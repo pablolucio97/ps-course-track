@@ -49,7 +49,7 @@ export function ClassCard({
           </ClassInfoContainer>
         </ClassSubContainer>
         {wasWatched && (
-          <ClassWatchedContainer>
+          <ClassWatchedContainer onPress={() => {}}>
             <Feather
               name="check-square"
               size={theme.sizes[5]}
