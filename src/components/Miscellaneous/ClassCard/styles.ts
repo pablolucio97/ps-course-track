@@ -51,6 +51,7 @@ export const CardRowContainer = styled.View`
 export const ClassSubContainer = styled.View`
   width: 80%;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const ClassInfoContainer = styled.View`
