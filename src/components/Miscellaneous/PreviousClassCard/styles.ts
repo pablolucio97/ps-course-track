@@ -65,9 +65,9 @@ export const Styles = StyleSheet.create({
     marginLeft: RFValue(-8),
   },
   classTitle: {
-    marginRight: RFValue(4),
+    marginLeft: RFValue(4),
   },
   card: {
-    marginLeft: RFValue(2),
+    marginRight: RFValue(2),
   },
 });

@@ -14,17 +14,17 @@ import {
   Text,
 } from './styles';
 
-interface NextClassCardProps {
+interface PreviousClassCardProps {
   classDuration: string;
   classTitle: string;
   onPress: () => void;
 }
 
-export function NextClassCard({
+export function PreviousClassCard({
   classDuration,
   classTitle,
   onPress,
-}: NextClassCardProps) {
+}: PreviousClassCardProps) {
   const theme = useTheme() as IStyledTheme;
 
   const MAX_CLASS_TITLE = 36;
@@ -32,13 +32,13 @@ export function NextClassCard({
 
   return (
     <Container onPress={onPress}>
-      <CardRowContainer style={GlobalStyles.justifyContentFlexEnd}>
-        <CardTitle style={Styles.classTitle}>Próxima aula</CardTitle>
+      <CardRowContainer style={GlobalStyles.justifyContentFlexStart}>
         <Feather
-          name="arrow-right"
+          name="arrow-left"
           size={theme.sizes[7]}
           color={theme.colors.title}
         />
+        <CardTitle style={Styles.classTitle}>Aula anterior</CardTitle>
       </CardRowContainer>
       <CardContainer>
         <ClassInfoContainer>
