@@ -36,6 +36,17 @@ export function VideoClasses() {
       <ColumnContainer>
         <Title content="Videoaulas" style={GlobalStyles.marginBottomMedium} />
       </ColumnContainer>
+      <ColumnContainer>
+        <Subtitle
+          content="05 módulos, 210 videoaulas"
+          style={
+            [
+              GlobalStyles.marginBottomMedium,
+              { fontSize: light.theme.sizes[5] },
+            ] as never
+          }
+        />
+      </ColumnContainer>
 
       <ScrollContainer showsVerticalScrollIndicator={false}>
         {mockedClasses.map(videoClass => (
