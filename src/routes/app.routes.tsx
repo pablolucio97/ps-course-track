@@ -24,17 +24,19 @@ const AppRoutes = () => {
   const screensConfig = {
     headerShown: false,
     tabBarStyle: {
-      backgroundColor: theme.colors.primary,
+      backgroundColor: theme.colors.secondary,
       minHeight: Platform.OS === 'ios' ? theme.sizes[13] : theme.sizes[12],
       padding: theme.spacings[3],
-      paddingTop: Platform.OS === 'ios' ? theme.spacings[1] : 0,
-      paddingBottom: theme.spacings[5],
+      paddingTop: Platform.OS === 'ios' ? theme.spacings[1] : theme.spacings[2],
+      paddingBottom:
+        Platform.OS === 'ios' ? theme.spacings[5] : theme.spacings[3],
     },
     tabBarHideOnKeyboard: true,
     tabBarLabelStyle: {
-      color: theme.colors.absolute_white,
-      fontSize: 14,
-      marginTop: -theme.spacings[2],
+      color: theme.colors.primary,
+      fontSize: Platform.OS === 'ios' ? 14 : 12,
+      marginTop:
+        Platform.OS === 'ios' ? -theme.spacings[2] : -theme.spacings[1],
     },
   };
 
@@ -62,11 +64,7 @@ const AppRoutes = () => {
             return (
               <Ionicons
                 name="home"
-                color={
-                  focused
-                    ? theme.colors.secondaryVariant
-                    : theme.colors.absolute_white
-                }
+                color={theme.colors.primary}
                 size={focused ? theme.sizes[6] : theme.sizes[5]}
               />
             );
@@ -75,11 +73,7 @@ const AppRoutes = () => {
             return (
               <Feather
                 name="play-circle"
-                color={
-                  focused
-                    ? theme.colors.secondaryVariant
-                    : theme.colors.absolute_white
-                }
+                color={theme.colors.primary}
                 size={focused ? theme.sizes[6] : theme.sizes[5]}
               />
             );
