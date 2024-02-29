@@ -1,3 +1,4 @@
+import { Feather, Ionicons } from '@expo/vector-icons';
 import { IStyledTheme } from '@interfaces/theme';
 import {
   BottomTabNavigationProp,
@@ -11,8 +12,8 @@ import { useTheme } from 'styled-components/native';
 const BottomTab = createBottomTabNavigator();
 
 export type TAppRoutes = {
-  Home: undefined;
-  VideoClasses: undefined;
+  Início: undefined;
+  Aulas: undefined;
 };
 
 export type TAppRoutesBottomTabs = BottomTabNavigationProp<TAppRoutes>;
@@ -23,32 +24,69 @@ const AppRoutes = () => {
   const screensConfig = {
     headerShown: false,
     tabBarStyle: {
-      backgroundColor: theme.colors.secondary,
+      backgroundColor: theme.colors.primary,
       minHeight: Platform.OS === 'ios' ? theme.sizes[13] : theme.sizes[12],
       padding: theme.spacings[3],
-      paddingTop: Platform.OS === 'ios' ? theme.spacings[3] : 0,
-      paddingBottom: theme.spacings[3],
+      paddingTop: Platform.OS === 'ios' ? theme.spacings[1] : 0,
+      paddingBottom: theme.spacings[5],
     },
     tabBarHideOnKeyboard: true,
+    tabBarLabelStyle: {
+      color: theme.colors.absolute_white,
+      fontSize: 14,
+      marginTop: -theme.spacings[2],
+    },
   };
 
   const screens = [
     {
       id: 1,
-      name: 'Home',
+      name: 'Início',
       component: Home,
       options: screensConfig,
     },
     {
       id: 1,
-      name: 'VideoClasses',
+      name: 'Aulas',
       component: VideoClasses,
       options: screensConfig,
     },
   ];
 
   return (
-    <BottomTab.Navigator initialRouteName="Home">
+    <BottomTab.Navigator
+      initialRouteName="Início"
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused }) => {
+          if (route.name === 'Início') {
+            return (
+              <Ionicons
+                name="home"
+                color={
+                  focused
+                    ? theme.colors.secondaryVariant
+                    : theme.colors.absolute_white
+                }
+                size={focused ? theme.sizes[6] : theme.sizes[5]}
+              />
+            );
+          }
+          if (route.name === 'Aulas') {
+            return (
+              <Feather
+                name="play-circle"
+                color={
+                  focused
+                    ? theme.colors.secondaryVariant
+                    : theme.colors.absolute_white
+                }
+                size={focused ? theme.sizes[6] : theme.sizes[5]}
+              />
+            );
+          }
+        },
+      })}
+    >
       {screens.map(screen => (
         <BottomTab.Screen
           key={screen.id}
