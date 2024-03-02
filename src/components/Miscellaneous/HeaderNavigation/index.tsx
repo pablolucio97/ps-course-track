@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons';
 import { IStyledTheme } from '@interfaces/theme';
+import { useNavigation } from '@react-navigation/native';
 import { SvgXml } from 'react-native-svg';
 import { CSSProperties } from 'styled-components';
 import { useTheme } from 'styled-components/native';
@@ -15,7 +16,7 @@ import {
 
 interface HeaderNavigationProps {
   screenTitle: string;
-  onBack: () => void;
+  onBack?: () => void;
   style?: CSSProperties;
   showsLogo?: boolean;
   onPressLogo?: () => void;
@@ -30,10 +31,11 @@ export function HeaderNavigation({
 }: HeaderNavigationProps) {
   const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
+  const navigation = useNavigation();
   return (
     <Container style={style as never}>
       <ContentContainer>
-        <BackButton onPress={onBack}>
+        <BackButton onPress={onBack ? onBack : () => navigation.goBack()}>
           <Feather
             name="arrow-left"
             size={theme.sizes[7]}

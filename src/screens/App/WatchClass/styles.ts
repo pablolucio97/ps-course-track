@@ -1,4 +1,3 @@
-import { TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
@@ -21,42 +20,11 @@ export const ScrollContainer = styled.ScrollView`
   `}
 `;
 
-export const CollapsibleExpandedContainer = styled.View`
+export const PreviousAndNextClassContainer = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
-    height: auto;
-    padding: ${RFValue(theme.spacings[3])}px;
-    background-color: ${theme.colors.background};
-    border-radius: ${theme.spacings[3]}px;
-    elevation: 8;
-    shadow-color: ${theme.colors.absolute_black};
-    shadow-offset: ${RFValue(1)}px;
-    shadow-opacity: 0.25;
-    shadow-radius: ${RFValue(4)}px;
-    margin-bottom: ${RFValue(theme.spacings[4])}px;
-  `}
-`;
-
-export const CollapsibleCollapsedContainer = styled.View`
-  ${({ theme }: DefaultTheme) => css`
-  width: 100%;
-  height: auto;
-  padding: ${theme.spacings[3]}px;
-  background-color: ${theme.colors.error};
-  border-radius: ${theme.spacings[3]}px;
-  elevation: 8;
-  shadow-color: ${theme.colors.absolute_black};
-  shadow-offset: ${RFValue(1)}px;
-  shadow-opacity: 0.25;
-    shadow-radius: ${RFValue(4)}px;
-    margin-bottom: ${RFValue(theme.spacings[4])}px)};
-  `}
-`;
-
-export const Button = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })`
-  ${({ theme }: DefaultTheme) => css`
-    width: 100%;
-    height: auto;
-    padding: ${theme.spacings[2]}px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: ${RFValue(theme.spacings[0])}px;
   `}
 `;

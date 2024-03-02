@@ -30,6 +30,7 @@ export const CardTitle = styled.Text`
 export const ClassTitle = styled(CardTitle)`
   ${({ theme }: DefaultTheme) => css`
     font-size: ${RFValue(theme.fontSizes[4])}px;
+    margin-right: ${RFValue(theme.spacings[2])}px;
   `}
 `;
 
