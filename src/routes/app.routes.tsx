@@ -4,19 +4,31 @@ import {
   BottomTabNavigationProp,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
+import {
+  StackNavigationProp,
+  createStackNavigator,
+} from '@react-navigation/stack';
 import { Home } from '@screens/App/Home';
 import { VideoClasses } from '@screens/App/VideoClasses';
+import { WatchClass } from '@screens/App/WatchClass';
+import { generateUuid } from '@utils/uuid';
 import { Platform } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
-const BottomTab = createBottomTabNavigator();
+const BottomTabNavigator = createBottomTabNavigator();
+const StackNavigator = createStackNavigator();
 
-export type TAppRoutes = {
+export type TAppRoutesTab = {
   Início: undefined;
   Aulas: undefined;
 };
+export type TAppRoutesStackNavigator = {
+  Home: undefined;
+  AssistirAula: undefined;
+};
 
-export type TAppRoutesBottomTabs = BottomTabNavigationProp<TAppRoutes>;
+export type TAppRoutesBottomTabs = BottomTabNavigationProp<TAppRoutesTab>;
+export type TAppRoutesStack = StackNavigationProp<TAppRoutesStackNavigator>;
 
 const AppRoutes = () => {
   const theme = useTheme() as IStyledTheme;
@@ -40,56 +52,90 @@ const AppRoutes = () => {
     },
   };
 
-  const screens = [
+  const bottomTabsScreens = [
     {
-      id: 1,
+      id: generateUuid(),
       name: 'Início',
       component: Home,
       options: screensConfig,
     },
     {
-      id: 1,
+      id: generateUuid(),
       name: 'Aulas',
       component: VideoClasses,
       options: screensConfig,
     },
   ];
 
+  function RenderBottomTabsNavigation() {
+    return (
+      <BottomTabNavigator.Navigator
+        initialRouteName="Início"
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
+            if (route.name === 'Início') {
+              return (
+                <Ionicons
+                  name="home"
+                  color={theme.colors.primary}
+                  size={focused ? theme.sizes[6] : theme.sizes[5]}
+                />
+              );
+            }
+            if (route.name === 'Aulas') {
+              return (
+                <Feather
+                  name="play-circle"
+                  color={theme.colors.primary}
+                  size={focused ? theme.sizes[6] : theme.sizes[5]}
+                />
+              );
+            }
+          },
+        })}
+      >
+        {bottomTabsScreens.map(screen => (
+          <BottomTabNavigator.Screen
+            key={screen.id}
+            name={screen.name}
+            component={screen.component}
+            options={screen.options as never}
+          />
+        ))}
+      </BottomTabNavigator.Navigator>
+    );
+  }
+
+  const stackScreens = [
+    {
+      id: generateUuid(),
+      name: 'Home',
+      component: RenderBottomTabsNavigation,
+      options: screensConfig,
+    },
+    {
+      id: generateUuid(),
+      name: 'AssistirAula',
+      component: WatchClass,
+      options: screensConfig,
+    },
+  ];
+
   return (
-    <BottomTab.Navigator
-      initialRouteName="Início"
-      screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused }) => {
-          if (route.name === 'Início') {
-            return (
-              <Ionicons
-                name="home"
-                color={theme.colors.primary}
-                size={focused ? theme.sizes[6] : theme.sizes[5]}
-              />
-            );
-          }
-          if (route.name === 'Aulas') {
-            return (
-              <Feather
-                name="play-circle"
-                color={theme.colors.primary}
-                size={focused ? theme.sizes[6] : theme.sizes[5]}
-              />
-            );
-          }
-        },
-      })}
+    <StackNavigator.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        headerShown: false,
+      }}
     >
-      {screens.map(screen => (
-        <BottomTab.Screen
+      {stackScreens.map(screen => (
+        <StackNavigator.Screen
           key={screen.id}
           name={screen.name}
-          component={screen.component}
-          options={screen.options as never}
+          component={screen.component as never}
         />
       ))}
-    </BottomTab.Navigator>
+    </StackNavigator.Navigator>
   );
 };
 

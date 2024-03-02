@@ -17,17 +17,19 @@ interface ClassCardProps {
   classDuration: string;
   id?: string;
   wasWatched?: boolean;
+  onPress: () => void;
 }
 
 export function ClassCard({
   classDuration,
   classTitle,
   wasWatched,
+  onPress,
 }: ClassCardProps) {
   const theme = useTheme() as IStyledTheme;
 
   return (
-    <CardContainer>
+    <CardContainer onPress={onPress}>
       <CardRowContainer>
         <ClassSubContainer>
           {wasWatched ? (

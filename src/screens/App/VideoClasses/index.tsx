@@ -14,9 +14,13 @@ import {
   Container,
   ScrollContainer,
 } from './styles';
+import { useNavigation } from '@react-navigation/native';
+import { TAppRoutesStack } from '@routes/app.routes';
 
 export function VideoClasses() {
   const [collapsedModules, setCollapsedModules] = useState<string[]>([]);
+
+  const navigation = useNavigation<TAppRoutesStack>();
 
   const collapseModule = (moduleId: string) => {
     const pushedModule = collapsedModules.push(moduleId);
@@ -104,6 +108,7 @@ export function VideoClasses() {
                   classTitle={c.title}
                   classDuration={c.duration}
                   wasWatched={c.watched}
+                  onPress={() => navigation.navigate('AssistirAula')}
                 />
               ))}
             </Collapsible>
