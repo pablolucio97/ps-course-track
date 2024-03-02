@@ -11,7 +11,7 @@ import {
   logoWithTextSvg,
   logoWithTextWhiteSvg,
   newStoreUpdateSvg,
-} from '../../assets/svgs';
+} from '../../../assets/svgs';
 import { Container, ContentContainer, LogoContainer } from './styles';
 
 export function NewUpdateStore() {

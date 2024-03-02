@@ -15,7 +15,7 @@ import {
     faceIdSvg,
     logoWithTextSvg,
     logoWithTextWhiteSvg,
-} from '../../assets/svgs';
+} from '../../../assets/svgs';
 import { Container, Styles } from './styles';
 
 export function SecureAuthenticationScreen() {

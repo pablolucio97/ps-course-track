@@ -4,8 +4,8 @@ import {
   BottomTabNavigationProp,
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
-import { Home } from '@screens/Home';
-import { VideoClasses } from '@screens/VideoClasses';
+import { Home } from '@screens/App/Home';
+import { VideoClasses } from '@screens/App/VideoClasses';
 import { Platform } from 'react-native';
 import { useTheme } from 'styled-components/native';
 

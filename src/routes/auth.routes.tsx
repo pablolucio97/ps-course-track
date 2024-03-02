@@ -1,17 +1,17 @@
-import { InitialScreen } from '@screens/InitialScreen';
-import { PasswordRecovery } from '@screens/PasswordRecovery';
-import { PolicyPrivacy } from '@screens/PolicyPrivacy';
-import { SecureAuthenticationScreen } from '@screens/SecureAuthenticationScreen';
-import { SignUp } from '@screens/SignUp';
-import { SplashScreen } from '@screens/SplashScreen';
-import { TermsAndPoliticsSelector } from '@screens/TermsAndPolicySelector';
-import { UseTerms } from '@screens/UseTerms';
+import { InitialScreen } from '@screens/Auth/InitialScreen';
+import { PasswordRecovery } from '@screens/Auth/PasswordRecovery';
+import { PolicyPrivacy } from '@screens/Auth/PolicyPrivacy';
+import { SecureAuthenticationScreen } from '@screens/Auth/SecureAuthenticationScreen';
+import { SignUp } from '@screens/Auth/SignUp';
+import { SplashScreen } from '@screens/Auth/SplashScreen';
+import { TermsAndPoliticsSelector } from '@screens/Auth/TermsAndPolicySelector';
+import { UseTerms } from '@screens/Auth/UseTerms';
 
 import {
-  StackNavigationProp,
-  createStackNavigator,
+    StackNavigationProp,
+    createStackNavigator,
 } from '@react-navigation/stack';
-import { NewUpdateStore } from '@screens/NewUpdateStore';
+import { NewUpdateStore } from '@screens/Auth/NewUpdateStore';
 
 export type TAuthRoutes = {
   SplashScreen: undefined;

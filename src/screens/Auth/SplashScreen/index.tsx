@@ -12,7 +12,7 @@ import Animated, {
 } from 'react-native-reanimated';
 import { SvgXml } from 'react-native-svg';
 import { light as lightTheme } from 'themes/light';
-import { logoSvg } from '../../assets/svgs';
+import { logoSvg } from '../../../assets/svgs';
 import { Container, GradientContainer, LogoTitle } from './styles';
 
 export function SplashScreen() {

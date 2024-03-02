@@ -15,11 +15,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components/native';
-import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
+import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../../assets/svgs';
 import { Container, FormContainer, ImageContainer, Styles } from './styles';
 
 export function InitialScreen() {
-  const bgImgPath = '../../assets/imgs/initial_screen_bg.png';
+  const bgImgPath = '../../../assets/imgs/initial_screen_bg.png';
   const [isAuthenticated] = useState(false);
   const [hasStoreUpdates] = useState(false);
   const navigation = useNavigation<TAuthRoutesStack>();

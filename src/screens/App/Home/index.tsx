@@ -7,13 +7,13 @@ import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SvgXml } from 'react-native-svg';
-import { logoSmallSvg } from '../../assets/svgs';
+import { logoSmallSvg } from '../../../assets/svgs';
 import { GreetUser } from './components/GreetUser';
 import { ReturnLastClassCard } from './components/ReturnLastClassCard';
 import { Container, Styles } from './styles';
 
 export function Home() {
-  const bgImgPath = '../../assets/imgs/course_img_bg.png';
+  const bgImgPath = '../../../assets/imgs/course_img_bg.png';
   const [isCollapsed, setIsCollapsed] = useState(true);
   return (
     <Container>

@@ -10,7 +10,7 @@ import { GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
 import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components/native';
-import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../assets/svgs';
+import { logoWithTextSvg, logoWithTextWhiteSvg } from '../../../assets/svgs';
 import { Container, TextContainer, TitleContainer } from './styles';
 
 export function PolicyPrivacy() {
