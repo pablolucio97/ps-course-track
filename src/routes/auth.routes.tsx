@@ -4,12 +4,11 @@ import { PolicyPrivacy } from '@screens/Auth/PolicyPrivacy';
 import { SecureAuthenticationScreen } from '@screens/Auth/SecureAuthenticationScreen';
 import { SignUp } from '@screens/Auth/SignUp';
 import { SplashScreen } from '@screens/Auth/SplashScreen';
-import { TermsAndPoliticsSelector } from '@screens/Auth/TermsAndPolicySelector';
 import { UseTerms } from '@screens/Auth/UseTerms';
 
 import {
-    StackNavigationProp,
-    createStackNavigator,
+  StackNavigationProp,
+  createStackNavigator,
 } from '@react-navigation/stack';
 import { NewUpdateStore } from '@screens/Auth/NewUpdateStore';
 
@@ -60,11 +59,6 @@ const AuthRoutes = () => {
     {
       name: 'PasswordRecovery',
       component: PasswordRecovery,
-      options: screensConfig,
-    },
-    {
-      name: 'TermsAndPoliticsSelector',
-      component: TermsAndPoliticsSelector,
       options: screensConfig,
     },
     {

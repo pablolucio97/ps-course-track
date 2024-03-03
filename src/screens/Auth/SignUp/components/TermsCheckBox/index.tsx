@@ -4,12 +4,12 @@ import { TAuthRoutesStack } from '@routes/auth.routes';
 import { light } from '@themes/light';
 import { CSSProperties } from 'styled-components';
 import {
-    Button,
-    ColumnContainer,
-    Container,
-    LinkText,
-    RowContainer,
-    Text,
+  Button,
+  ColumnContainer,
+  Container,
+  LinkText,
+  RowContainer,
+  Text,
 } from './styles';
 
 interface TermsCheckBoxProps extends CheckboxProps {
@@ -28,14 +28,12 @@ export function TermsCheckBox({ checked, onCheck, style }: TermsCheckBoxProps) {
       <ColumnContainer>
         <RowContainer>
           <Text>Concordo com os</Text>
-          <Button
-            onPress={() => navigation.navigate('TermsAndPoliticsSelector')}
-          >
+          <Button onPress={() => navigation.navigate('UseTerms')}>
             <LinkText> Termos de Uso </LinkText>
           </Button>
           <Text>e</Text>
         </RowContainer>
-        <Button onPress={() => navigation.navigate('TermsAndPoliticsSelector')}>
+        <Button onPress={() => navigation.navigate('PolicyPrivacy')}>
           <LinkText>Política de Privacidade</LinkText>
         </Button>
       </ColumnContainer>
