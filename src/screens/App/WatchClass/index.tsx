@@ -4,14 +4,29 @@ import { NextClassCard } from '@components/Miscellaneous/NextClassCard';
 import { PreviousClassCard } from '@components/Miscellaneous/PreviousClassCard';
 import { Subtitle } from '@components/Typography/Subtitle';
 import { GlobalStyles } from '@styles/globals';
+import { ResizeMode, Video } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
-import { Container, PreviousAndNextClassContainer } from './styles';
+import { useRef } from 'react';
+import { Container, PreviousAndNextClassContainer, Styles } from './styles';
 
 export function WatchClass() {
+  const videoRef = useRef(null);
+  const videoUrl = 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4';
+
   return (
     <Container>
       <StatusBar style="dark" />
       <HeaderNavigation screenTitle="Como criar negócios rentáveis" showsLogo />
+      <Video
+        ref={videoRef}
+        source={{
+          uri: videoUrl,
+        }}
+        useNativeControls
+        resizeMode={ResizeMode.CONTAIN}
+        style={Styles.video}
+        volume={1}
+      />
       <PreviousAndNextClassContainer>
         <PreviousClassCard
           classDuration="10:44"

@@ -1,6 +1,10 @@
+import { light } from '@themes/light';
+import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
+
+const { theme: appTheme } = light;
 
 export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
@@ -28,3 +32,13 @@ export const PreviousAndNextClassContainer = styled.View`
     padding: ${RFValue(theme.spacings[0])}px;
   `}
 `;
+
+export const Styles = StyleSheet.create({
+  video: {
+    width: '100%',
+    aspectRatio: '16/9',
+    backgroundColor: appTheme.colors.absolute_black,
+    marginTop: appTheme.spacings[4],
+    marginBottom: appTheme.spacings[4],
+  },
+});
