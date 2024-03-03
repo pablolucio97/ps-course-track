@@ -11,7 +11,7 @@ const navigatorThemeStyle = {
 };
 
 export const Routes = () => {
-  if (isAuthenticated) {
+  if (!isAuthenticated) {
     return (
       <NavigationContainer theme={navigatorThemeStyle as never}>
         <AuthRoutes />

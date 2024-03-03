@@ -4,7 +4,6 @@ import { CourseProgress } from '@components/Miscellaneous/CourseProgress';
 import { Subtitle } from '@components/Typography/Subtitle';
 import { ColumnContainer, GlobalStyles, RowContainer } from '@styles/globals';
 import { Image } from 'expo-image';
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { SvgXml } from 'react-native-svg';
 import { logoSmallSvg } from '../../../assets/svgs';
@@ -17,7 +16,6 @@ export function Home() {
   const [isCollapsed, setIsCollapsed] = useState(true);
   return (
     <Container>
-      <StatusBar style="dark" />
       <RowContainer
         style={[
           GlobalStyles.justifyContentSpaceBetween,

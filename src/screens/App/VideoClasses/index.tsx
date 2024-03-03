@@ -3,9 +3,10 @@ import { Subtitle } from '@components/Typography/Subtitle';
 import { Text } from '@components/Typography/Text';
 import { Title } from '@components/Typography/Title';
 import { mockedClasses } from '@data/mocks';
+import { useNavigation } from '@react-navigation/native';
+import { TAppRoutesStack } from '@routes/app.routes';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { light } from '@themes/light';
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import Collapsible from 'react-native-collapsible';
 import {
@@ -14,8 +15,6 @@ import {
   Container,
   ScrollContainer,
 } from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { TAppRoutesStack } from '@routes/app.routes';
 
 export function VideoClasses() {
   const [collapsedModules, setCollapsedModules] = useState<string[]>([]);
@@ -36,7 +35,6 @@ export function VideoClasses() {
 
   return (
     <Container>
-      <StatusBar style="dark" />
       <ColumnContainer>
         <Title content="Videoaulas" style={GlobalStyles.marginBottomMedium} />
       </ColumnContainer>

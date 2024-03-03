@@ -1,3 +1,4 @@
+import { StatusBar } from '@components/Miscellaneous/StatusBar';
 import {
   Poppins_300Light,
   Poppins_400Regular,
@@ -24,7 +25,7 @@ export default function App() {
   const { theme: lightTheme } = light;
   const { theme: darkTheme } = dark;
 
-  const appBackground = darkTheme.colors.background;
+  const appBackground = lightTheme.colors.background;
 
   const appStyle = StyleSheet.create({
     app: {
@@ -56,6 +57,7 @@ export default function App() {
     return (
       <ThemeProvider theme={darkTheme}>
         <View style={appStyle.app}>
+          <StatusBar />
           <Routes />
         </View>
       </ThemeProvider>
