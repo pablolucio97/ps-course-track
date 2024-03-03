@@ -41,4 +41,12 @@ export const Styles = StyleSheet.create({
     marginTop: appTheme.spacings[4],
     marginBottom: appTheme.spacings[4],
   },
+  supportText: {
+    marginBottom: appTheme.spacings[4],
+  },
+  seeAllCommentariesText: {
+    marginBottom: appTheme.spacings[4],
+    marginTop: -appTheme.spacings[3],
+    justifyContent: 'flex-start',
+  },
 });

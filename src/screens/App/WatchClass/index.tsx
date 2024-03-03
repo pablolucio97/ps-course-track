@@ -1,17 +1,27 @@
+import { BorderlessButton } from '@components/Buttons/BorderlessButton';
+import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { CollapsibleCard } from '@components/Miscellaneous/CollapsibleCard';
 import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { NextClassCard } from '@components/Miscellaneous/NextClassCard';
 import { PreviousClassCard } from '@components/Miscellaneous/PreviousClassCard';
 import { Subtitle } from '@components/Typography/Subtitle';
+import { IStyledTheme } from '@interfaces/theme';
 import { GlobalStyles } from '@styles/globals';
 import { ResizeMode, Video } from 'expo-av';
 import { StatusBar } from 'expo-status-bar';
 import { useRef } from 'react';
-import { Container, PreviousAndNextClassContainer, Styles } from './styles';
+import { useTheme } from 'styled-components/native';
+import {
+  Container,
+  PreviousAndNextClassContainer,
+  ScrollContainer,
+  Styles,
+} from './styles';
 
 export function WatchClass() {
   const videoRef = useRef(null);
   const videoUrl = 'https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4';
+  const theme = useTheme() as IStyledTheme;
 
   return (
     <Container>
@@ -27,32 +37,73 @@ export function WatchClass() {
         style={Styles.video}
         volume={1}
       />
-      <PreviousAndNextClassContainer>
-        <PreviousClassCard
-          classDuration="10:44"
-          classTitle="Como calcular custos corretamente"
-          onPress={() => {}}
+      <ScrollContainer showsVerticalScrollIndicator={false}>
+        <PreviousAndNextClassContainer>
+          <PreviousClassCard
+            classDuration="10:44"
+            classTitle="Como calcular custos corretamente"
+            onPress={() => {}}
+          />
+          <NextClassCard
+            classDuration="04:35"
+            classTitle="Como calcular custos"
+            onPress={() => {}}
+          />
+        </PreviousAndNextClassContainer>
+        <Subtitle
+          content="Sobre esta aula"
+          style={
+            [
+              GlobalStyles.marginTopMedium,
+              GlobalStyles.marginBottomSmall,
+            ] as never
+          }
         />
-        <NextClassCard
-          classDuration="04:35"
-          classTitle="Como calcular custos"
-          onPress={() => {}}
+        <CollapsibleCard
+          isCollapsed
+          content="Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh. "
+          onCollapse={() => {}}
+          style={[GlobalStyles.marginBottomSmall] as never}
         />
-      </PreviousAndNextClassContainer>
-      <Subtitle
-        content="Sobre esta aula"
-        style={
-          [
-            GlobalStyles.marginTopMedium,
-            GlobalStyles.marginBottomSmall,
-          ] as never
-        }
-      />
-      <CollapsibleCard
-        isCollapsed
-        content="Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh. "
-        onCollapse={() => {}}
-      />
+        <Subtitle
+          content="Comentários"
+          style={
+            [
+              GlobalStyles.marginTopMedium,
+              GlobalStyles.marginBottomSmall,
+            ] as never
+          }
+        />
+        <CollapsibleCard
+          isCollapsed
+          content="Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh. "
+          onCollapse={() => {}}
+          style={[GlobalStyles.marginBottomSmall] as never}
+        />
+        <CollapsibleCard
+          isCollapsed
+          content="Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh. "
+          onCollapse={() => {}}
+          style={[GlobalStyles.marginBottomSmall] as never}
+        />
+        <BorderlessButton
+          title="Ver todos os comentários"
+          style={Styles.seeAllCommentariesText}
+        />
+        <Subtitle
+          content="Gostaria de escrever um comentário ou precisa acessar o suporte?"
+          style={Styles.supportText}
+        />
+        <PrimaryButton
+          title="Escrever comentário"
+          style={[GlobalStyles.marginBottomSmall] as never}
+        />
+        <PrimaryButton
+          title="Acessar suporte"
+          bgColor={theme.colors.success}
+          style={[GlobalStyles.marginBottomLarge] as never}
+        />
+      </ScrollContainer>
     </Container>
   );
 }

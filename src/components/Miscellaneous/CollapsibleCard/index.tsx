@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { CSSProperties, Dispatch, SetStateAction } from 'react';
 import Collapsible from 'react-native-collapsible';
 import {
   Button,
@@ -17,6 +17,7 @@ interface CollapsibleCardProps {
   title?: string;
   buttonTitleExpanded?: string;
   buttonTitleCollapsed?: string;
+  style?: CSSProperties;
 }
 
 export function CollapsibleCard({
@@ -26,13 +27,14 @@ export function CollapsibleCard({
   buttonTitleCollapsed,
   isCollapsed,
   onCollapse,
+  style,
 }: CollapsibleCardProps) {
   const collapsedContent = content
     .substring(0, content.length / 3)
     .concat('...');
 
   return (
-    <CollapsibleExpandedContainer>
+    <CollapsibleExpandedContainer style={style as never}>
       {isCollapsed ? (
         <CollapsibleCollapsedContainer>
           {title && <Title>{title}</Title>}
