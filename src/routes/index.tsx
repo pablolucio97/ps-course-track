@@ -4,16 +4,22 @@ import AuthRoutes from './auth.routes';
 
 const isAuthenticated = false;
 
+const navigatorThemeStyle = {
+  colors: {
+    background: 'transparent',
+  },
+};
+
 export const Routes = () => {
   if (isAuthenticated) {
     return (
-      <NavigationContainer>
+      <NavigationContainer theme={navigatorThemeStyle as never}>
         <AuthRoutes />
       </NavigationContainer>
     );
   } else {
     return (
-      <NavigationContainer>
+      <NavigationContainer theme={navigatorThemeStyle as never}>
         <AppRoutes />
       </NavigationContainer>
     );

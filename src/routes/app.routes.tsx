@@ -37,18 +37,18 @@ const AppRoutes = () => {
     headerShown: false,
     tabBarStyle: {
       backgroundColor: theme.colors.secondary,
-      minHeight: Platform.OS === 'ios' ? theme.sizes[13] : theme.sizes[12],
-      padding: theme.spacings[3],
-      paddingTop: Platform.OS === 'ios' ? theme.spacings[1] : theme.spacings[2],
+      height: Platform.OS === 'ios' ? theme.sizes[11] : theme.sizes[12],
       paddingBottom:
-        Platform.OS === 'ios' ? theme.spacings[5] : theme.spacings[3],
+        Platform.OS === 'ios' ? theme.spacings[3] : theme.spacings[3],
+      margin: Platform.OS === 'ios' ? theme.spacings[5] : theme.spacings[3],
+      borderRadius: theme.spacings[7],
     },
     tabBarHideOnKeyboard: true,
     tabBarLabelStyle: {
       color: theme.colors.primary,
       fontSize: Platform.OS === 'ios' ? 14 : 12,
       marginTop:
-        Platform.OS === 'ios' ? -theme.spacings[2] : -theme.spacings[1],
+        Platform.OS === 'ios' ? -theme.spacings[3] : -theme.spacings[1],
     },
   };
 

@@ -17,11 +17,21 @@ import { light } from '@themes/light';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { ThemeProvider } from 'styled-components/native';
 
 export default function App() {
   const { theme: lightTheme } = light;
   const { theme: darkTheme } = dark;
+
+  const appBackground = darkTheme.colors.background;
+
+  const appStyle = StyleSheet.create({
+    app: {
+      flex: 1,
+      backgroundColor: appBackground,
+    },
+  });
 
   const [fontsLoaded] = useFonts({
     Roboto_300Light,
@@ -44,8 +54,10 @@ export default function App() {
   } else {
     SplashScreen.hideAsync();
     return (
-      <ThemeProvider theme={lightTheme}>
-        <Routes />
+      <ThemeProvider theme={darkTheme}>
+        <View style={appStyle.app}>
+          <Routes />
+        </View>
       </ThemeProvider>
     );
   }
