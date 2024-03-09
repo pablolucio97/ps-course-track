@@ -1,3 +1,4 @@
+/* eslint-disable quotes */
 import { BorderlessButton } from '@components/Buttons/BorderlessButton';
 import { PrimaryButton } from '@components/Buttons/PrimaryButton';
 import { TextInput } from '@components/Inputs/TextInput';
@@ -6,6 +7,7 @@ import { HeaderNavigation } from '@components/Miscellaneous/HeaderNavigation';
 import { NextClassCard } from '@components/Miscellaneous/NextClassCard';
 import { PreviousClassCard } from '@components/Miscellaneous/PreviousClassCard';
 import { Subtitle } from '@components/Typography/Subtitle';
+import { Text } from '@components/Typography/Text';
 import { classCommentaries } from '@data/mocks';
 import { IStyledTheme } from '@interfaces/theme';
 import { GlobalStyles } from '@styles/globals';
@@ -15,9 +17,12 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useRef, useState } from 'react';
 import { Keyboard, KeyboardAvoidingView, Platform } from 'react-native';
 import { Modalize } from 'react-native-modalize';
+import { SvgXml } from 'react-native-svg';
 import { useTheme } from 'styled-components/native';
+import { noDataSvg } from '../../../assets/svgs';
 import {
   Container,
+  NoDataContainer,
   PreviousAndNextClassContainer,
   ScrollContainer,
   Styles,
@@ -30,6 +35,7 @@ export function WatchClass() {
   const allCommentariesModalRef = useRef<Modalize>(null);
   const writeCommentaryModalRef = useRef<Modalize>(null);
   const [isKeyboardActive, setIsKeyboardActive] = useState(false);
+  const [commentary, setCommentary] = useState('');
 
   const handleOpenAllCommentariesModal = () => {
     allCommentariesModalRef?.current?.open();
@@ -39,10 +45,15 @@ export function WatchClass() {
     writeCommentaryModalRef?.current?.open();
   };
 
+  const TOTAL_ALLOWED_COMMENTARY_CHARACTERS_LENGTH = 320;
   const SEE_ALL_COMMENTARIES_MODAL_HEIGHT = getScreenHeightPercent(60);
-  const WRITE_COMMENTARY_MODAL_HEIGHT = getScreenHeightPercent(35);
+  const WRITE_COMMENTARY_MODAL_HEIGHT = getScreenHeightPercent(45);
   const WRITE_COMMENTARY_MODAL_HEIGHT_KEYBOARD_ACTIVE =
-    getScreenHeightPercent(70);
+    getScreenHeightPercent(80);
+
+  const calcRemainingCharactersLength = () => {
+    return TOTAL_ALLOWED_COMMENTARY_CHARACTERS_LENGTH - commentary.length;
+  };
 
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', () => {
@@ -109,20 +120,38 @@ export function WatchClass() {
             ] as never
           }
         />
-        {classCommentaries.slice(0, 2).map(commentary => (
-          <CollapsibleCard
-            key={commentary.id}
-            isCollapsed
-            content={commentary.commentary}
-            onCollapse={() => {}}
-            style={[GlobalStyles.marginBottomSmall] as never}
-          />
-        ))}
-        <BorderlessButton
-          title="Ver todos os comentários"
-          onPress={handleOpenAllCommentariesModal}
-          style={Styles.seeAllCommentariesText}
-        />
+        {classCommentaries.length > 0 ? (
+          <>
+            <BorderlessButton
+              title="Ver todos os comentários"
+              onPress={handleOpenAllCommentariesModal}
+              style={Styles.seeAllCommentariesText}
+            />
+            {classCommentaries.slice(0, 2).map(c => (
+              <CollapsibleCard
+                key={c.id}
+                isCollapsed
+                content={c.commentary}
+                onCollapse={() => {}}
+                style={[GlobalStyles.marginBottomSmall] as never}
+              />
+            ))}
+          </>
+        ) : (
+          <NoDataContainer>
+            <Text
+              content={`Ainda não existem comentários\npara esta aula`}
+              style={
+                [
+                  GlobalStyles.marginVerticalMedium,
+                  GlobalStyles.textCenter,
+                ] as never
+              }
+            />
+            <SvgXml xml={noDataSvg} style={Styles.noDataSVG} />
+          </NoDataContainer>
+        )}
+
         <Subtitle
           content="Gostaria de escrever um comentário ou precisa acessar o suporte?"
           style={Styles.supportText}
@@ -159,11 +188,11 @@ export function WatchClass() {
             ] as never
           }
         />
-        {classCommentaries.map(commentary => (
+        {classCommentaries.map(c => (
           <CollapsibleCard
-            key={commentary.id}
+            key={c.id}
             isCollapsed
-            content={commentary.commentary}
+            content={c.commentary}
             onCollapse={() => {}}
             style={[GlobalStyles.marginBottomMedium] as never}
           />
@@ -199,11 +228,18 @@ export function WatchClass() {
             label="Escreva seu comentário"
             multiline
             numberOfLines={40}
+            value={commentary}
+            maxLength={TOTAL_ALLOWED_COMMENTARY_CHARACTERS_LENGTH}
+            onChangeText={setCommentary}
             style={Styles.textAreaInput}
           />
           <Subtitle
-            content="40 caracteres restantes"
+            content={`${calcRemainingCharactersLength()} caracteres restantes`}
             style={Styles.textAreaCharactersIndicator}
+          />
+          <PrimaryButton
+            title="Enviar comentário"
+            style={[GlobalStyles.marginVerticalMedium] as never}
           />
         </KeyboardAvoidingView>
       </Modalize>

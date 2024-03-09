@@ -17,6 +17,14 @@ export const Container = styled.View`
   `}
 `;
 
+export const NoDataContainer = styled.View`
+  ${({ theme }: DefaultTheme) => css`
+    width: 100%;
+    justify-content: center;
+    margin-bottom: ${RFValue(theme.spacings[7])}px;
+  `}
+`;
+
 export const ScrollContainer = styled.ScrollView`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
@@ -58,15 +66,17 @@ export const Styles = StyleSheet.create({
   writeCommentaryModal: {
     width: getScreenWidth(),
     padding: RFValue(appTheme.spacings[3]),
-    paddingBottom: RFValue(appTheme.spacings[3]),
   },
   textAreaInput: {
-    height: RFValue(appTheme.sizes[14]),
+    height: RFValue(96),
   },
   textAreaCharactersIndicator: {
     fontSize: RFValue(appTheme.fontSizes[4]),
-    marginTop: RFValue(appTheme.spacings[12]),
+    marginTop: RFValue(appTheme.spacings[10]),
     marginRight: RFValue(appTheme.spacings[1]),
     textAlign: 'right',
+  },
+  noDataSVG: {
+    alignSelf: 'center',
   },
 });
