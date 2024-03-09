@@ -1,4 +1,5 @@
 import { light } from '@themes/light';
+import { getScreenWidth } from '@utils/layout';
 import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
@@ -48,5 +49,10 @@ export const Styles = StyleSheet.create({
     marginBottom: appTheme.spacings[4],
     marginTop: -appTheme.spacings[3],
     justifyContent: 'flex-start',
+  },
+  modal: {
+    width: getScreenWidth(),
+    padding: RFValue(12),
+    paddingBottom: RFValue(48),
   },
 });
