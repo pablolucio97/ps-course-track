@@ -39,20 +39,34 @@ export const Styles = StyleSheet.create({
     width: '100%',
     aspectRatio: '16/9',
     backgroundColor: appTheme.colors.absolute_black,
-    marginTop: appTheme.spacings[4],
-    marginBottom: appTheme.spacings[4],
+    marginTop: RFValue(appTheme.spacings[4]),
+    marginBottom: RFValue(appTheme.spacings[4]),
   },
   supportText: {
-    marginBottom: appTheme.spacings[4],
+    marginBottom: RFValue(appTheme.spacings[4]),
   },
   seeAllCommentariesText: {
-    marginBottom: appTheme.spacings[4],
-    marginTop: -appTheme.spacings[3],
+    marginBottom: RFValue(appTheme.spacings[4]),
+    marginTop: -RFValue(appTheme.spacings[3]),
     justifyContent: 'flex-start',
   },
-  modal: {
+  seeAllCommentariesModal: {
     width: getScreenWidth(),
-    padding: RFValue(12),
-    paddingBottom: RFValue(48),
+    padding: RFValue(appTheme.spacings[3]),
+    paddingBottom: RFValue(appTheme.spacings[9]),
+  },
+  writeCommentaryModal: {
+    width: getScreenWidth(),
+    padding: RFValue(appTheme.spacings[3]),
+    paddingBottom: RFValue(appTheme.spacings[3]),
+  },
+  textAreaInput: {
+    height: RFValue(appTheme.sizes[14]),
+  },
+  textAreaCharactersIndicator: {
+    fontSize: RFValue(appTheme.fontSizes[4]),
+    marginTop: RFValue(appTheme.spacings[12]),
+    marginRight: RFValue(appTheme.spacings[1]),
+    textAlign: 'right',
   },
 });

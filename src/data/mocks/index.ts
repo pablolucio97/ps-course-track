@@ -241,4 +241,33 @@ const mockedClasses = [
     ],
   },
 ];
-export { mockedClasses, privacyPolicyText, useTermsText };
+
+const classCommentaries = [
+  {
+    id: generateUuid(),
+    commentary:
+      'Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh.',
+  },
+  {
+    id: generateUuid(),
+    commentary:
+      'Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh.',
+  },
+  {
+    id: generateUuid(),
+    commentary:
+      'Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh.',
+  },
+  {
+    id: generateUuid(),
+    commentary:
+      'Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh.',
+  },
+  {
+    id: generateUuid(),
+    commentary:
+      'Maecenas at massa faucibus, pellentesque metus nec, pharetra nunc. Aliquam enim eros, eleifend id ornare nec, lacinia id justo. Nam magna tortor, sollicitudin ut arcu id, vulputate posuere nibh.',
+  },
+];
+
+export { classCommentaries, mockedClasses, privacyPolicyText, useTermsText };
