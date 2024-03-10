@@ -10,6 +10,7 @@ import {
 } from '@react-navigation/stack';
 import { Home } from '@screens/App/Home';
 import { VideoClasses } from '@screens/App/VideoClasses';
+import { Profile } from '@screens/App/Profile';
 import { WatchClass } from '@screens/App/WatchClass';
 import { generateUuid } from '@utils/uuid';
 import { Platform } from 'react-native';
@@ -21,6 +22,7 @@ const StackNavigator = createStackNavigator();
 export type TAppRoutesTab = {
   Início: undefined;
   Aulas: undefined;
+  Perfil: undefined;
 };
 export type TAppRoutesStackNavigator = {
   Home: undefined;
@@ -65,6 +67,12 @@ const AppRoutes = () => {
       component: VideoClasses,
       options: screensConfig,
     },
+    {
+      id: generateUuid(),
+      name: 'Perfil',
+      component: Profile,
+      options: screensConfig,
+    },
   ];
 
   function RenderBottomTabsNavigation() {
@@ -86,6 +94,15 @@ const AppRoutes = () => {
               return (
                 <Feather
                   name="play-circle"
+                  color={theme.colors.primary}
+                  size={focused ? theme.sizes[6] : theme.sizes[5]}
+                />
+              );
+            }
+            if (route.name === 'Perfil') {
+              return (
+                <Feather
+                  name="user"
                   color={theme.colors.primary}
                   size={focused ? theme.sizes[6] : theme.sizes[5]}
                 />
