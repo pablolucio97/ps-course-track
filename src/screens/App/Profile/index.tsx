@@ -1,7 +1,6 @@
 import { AppVersion } from '@components/Miscellaneous/AppVersion';
+import { Title } from '@components/Typography/Title';
 import { IStyledTheme } from '@interfaces/theme';
-import { useNavigation } from '@react-navigation/native';
-import { TAppRoutesStack } from '@routes/app.routes';
 import { UserProfileCard } from '@screens/App/Profile/components/UserProfileCard';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { StatusBar } from 'expo-status-bar';
@@ -12,13 +11,13 @@ import { MenuCard } from './components/MenuCard';
 import { Container } from './styles';
 
 export function Profile() {
-  const navigation = useNavigation<TAppRoutesStack>();
   const theme = useTheme() as IStyledTheme;
   const img = 'https://avatars.githubusercontent.com/u/124673758?v=4';
   const currentTheme = theme.title;
   return (
     <Container>
       <ColumnContainer>
+        <Title content="Meu Perfi e Configurações" />
         <StatusBar style={theme.title === 'dark' ? 'light' : 'dark'} />
         <UserProfileCard
           userEmail="john-doe@gmail.com"

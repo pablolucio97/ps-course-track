@@ -25,7 +25,7 @@ export default function App() {
   const { theme: lightTheme } = light;
   const { theme: darkTheme } = dark;
 
-  const appBackground = lightTheme.colors.background;
+  const appBackground = darkTheme.colors.background;
 
   const appStyle = StyleSheet.create({
     app: {

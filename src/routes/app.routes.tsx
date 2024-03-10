@@ -9,8 +9,8 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import { Home } from '@screens/App/Home';
-import { VideoClasses } from '@screens/App/VideoClasses';
 import { Profile } from '@screens/App/Profile';
+import { VideoClasses } from '@screens/App/VideoClasses';
 import { WatchClass } from '@screens/App/WatchClass';
 import { generateUuid } from '@utils/uuid';
 import { Platform } from 'react-native';
@@ -38,19 +38,17 @@ const AppRoutes = () => {
   const screensConfig = {
     headerShown: false,
     tabBarStyle: {
-      backgroundColor: theme.colors.secondary,
-      height: Platform.OS === 'ios' ? theme.sizes[11] : theme.sizes[12],
+      backgroundColor: theme.colors.cards,
+      height: Platform.OS === 'ios' ? theme.sizes[10] : theme.sizes[8],
       paddingBottom:
-        Platform.OS === 'ios' ? theme.spacings[3] : theme.spacings[3],
-      margin: Platform.OS === 'ios' ? theme.spacings[5] : theme.spacings[3],
-      borderRadius: theme.spacings[7],
+        Platform.OS === 'ios' ? theme.spacings[0] : theme.spacings[2],
+      margin: theme.spacings[5],
+      marginBottom: theme.spacings[7],
+      borderRadius: theme.spacings[4],
     },
     tabBarHideOnKeyboard: true,
     tabBarLabelStyle: {
-      color: theme.colors.primary,
-      fontSize: Platform.OS === 'ios' ? 14 : 12,
-      marginTop:
-        Platform.OS === 'ios' ? -theme.spacings[3] : -theme.spacings[1],
+      display: 'none',
     },
   };
 
@@ -85,7 +83,7 @@ const AppRoutes = () => {
               return (
                 <Ionicons
                   name="home"
-                  color={theme.colors.primary}
+                  color={theme.colors.secondary}
                   size={focused ? theme.sizes[6] : theme.sizes[5]}
                 />
               );
@@ -94,7 +92,7 @@ const AppRoutes = () => {
               return (
                 <Feather
                   name="play-circle"
-                  color={theme.colors.primary}
+                  color={theme.colors.secondary}
                   size={focused ? theme.sizes[6] : theme.sizes[5]}
                 />
               );
@@ -103,7 +101,7 @@ const AppRoutes = () => {
               return (
                 <Feather
                   name="user"
-                  color={theme.colors.primary}
+                  color={theme.colors.secondary}
                   size={focused ? theme.sizes[6] : theme.sizes[5]}
                 />
               );
