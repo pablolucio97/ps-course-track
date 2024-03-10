@@ -11,10 +11,7 @@ export const Container = styled.View`
     border-radius: ${RFValue(theme.sizes[2])}px;
     background-color: ${theme.colors.cards};
     padding: ${RFValue(theme.sizes[4])}px;
-    shadow-color: ${theme.colors.absolute_black};
-    shadow-offset: ${RFValue(1)}px;
-    shadow-opacity: 0.25;
-    shadow-radius: ${RFValue(theme.sizes[2])}px;
+    margin-top: ${RFValue(theme.spacings[4])}px;
   `}
 `;
 export const TextContainer = styled.View`

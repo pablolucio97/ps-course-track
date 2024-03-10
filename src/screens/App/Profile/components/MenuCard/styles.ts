@@ -11,8 +11,8 @@ export const Container = styled.View`
     align-items: center;
     border-radius: ${RFValue(10)}px;
     background-color: ${theme.colors.cards};
-    elevation: 2;
     padding: ${RFValue(24)}px;
+    margin-top: ${RFValue(theme.spacings[4])}px;
   `}
 `;
 

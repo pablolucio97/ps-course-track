@@ -7,6 +7,7 @@ export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
     width: 100%;
     flex: 1;
+    justify-content: space-between;
     background-color: ${theme.colors.background};
     padding: ${RFValue(theme.spacings[5])}px;
     padding-top: ${RFValue(theme.spacings[9])}px;

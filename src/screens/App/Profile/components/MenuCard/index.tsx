@@ -69,7 +69,10 @@ export function MenuCard({
           size={ICON_SIZE}
         />
       ),
-      content: 'Mudar para o tema escuro',
+      content:
+        theme.title === 'dark'
+          ? 'Mudar para o tema claro'
+          : 'Mudar para o tema escuro',
       onPress: onChangeTheme,
     },
     {

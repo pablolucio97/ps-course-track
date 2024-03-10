@@ -55,7 +55,7 @@ export default function App() {
   } else {
     SplashScreen.hideAsync();
     return (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={darkTheme}>
         <View style={appStyle.app}>
           <StatusBar />
           <Routes />
