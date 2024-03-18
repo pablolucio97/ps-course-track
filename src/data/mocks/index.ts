@@ -122,13 +122,13 @@ const mockedClasses = [
         id: generateUuid(),
         title: 'Como empreender 02',
         duration: '09:22',
-        watched: true,
+        watched: false,
       },
       {
         id: generateUuid(),
         title: 'Como empreender 03',
         duration: '24:40',
-        watched: true,
+        watched: false,
       },
       {
         id: generateUuid(),

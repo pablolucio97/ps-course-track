@@ -29,7 +29,14 @@ export function ClassCard({
   const theme = useTheme() as IStyledTheme;
 
   return (
-    <CardContainer onPress={onPress}>
+    <CardContainer
+      onPress={onPress}
+      style={
+        wasWatched
+          ? { backgroundColor: theme.colors.cards }
+          : { backgroundColor: theme.colors.inputs }
+      }
+    >
       <CardRowContainer>
         <ClassSubContainer>
           {wasWatched ? (
@@ -51,7 +58,7 @@ export function ClassCard({
           </ClassInfoContainer>
         </ClassSubContainer>
         {wasWatched && (
-          <ClassWatchedContainer onPress={() => {}}>
+          <ClassWatchedContainer onPress={onPress}>
             <Feather
               name="check-square"
               size={theme.sizes[5]}
