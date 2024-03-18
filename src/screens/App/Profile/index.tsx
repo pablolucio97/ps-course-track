@@ -1,5 +1,6 @@
 import { AppVersion } from '@components/Miscellaneous/AppVersion';
 import { Title } from '@components/Typography/Title';
+import { useAppTheme } from '@hooks/useTheme';
 import { IStyledTheme } from '@interfaces/theme';
 import { UserProfileCard } from '@screens/App/Profile/components/UserProfileCard';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
@@ -14,6 +15,8 @@ export function Profile() {
   const theme = useTheme() as IStyledTheme;
   const img = 'https://avatars.githubusercontent.com/u/124673758?v=4';
   const currentTheme = theme.title;
+  const { changeTheme } = useAppTheme();
+
   return (
     <Container>
       <ColumnContainer>
@@ -35,7 +38,7 @@ export function Profile() {
             console.log('Logout');
           }}
           onChangeTheme={() => {
-            console.log('Change Theme');
+            changeTheme();
           }}
         />
       </ColumnContainer>
