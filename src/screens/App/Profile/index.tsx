@@ -8,6 +8,7 @@ import { useAppTheme } from '@hooks/useTheme';
 import { IStyledTheme } from '@interfaces/theme';
 import { useFocusEffect } from '@react-navigation/native';
 import { UserProfileCard } from '@screens/App/Profile/components/UserProfileCard';
+import { useAuthenticationStore } from '@store/Auth';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { getScreenHeightPercent } from '@utils/layout';
 import { StatusBar } from 'expo-status-bar';
@@ -24,6 +25,7 @@ export function Profile() {
   const img = 'https://avatars.githubusercontent.com/u/124673758?v=4';
   const currentTheme = theme.title;
   const { changeTheme } = useAppTheme();
+  const { signOut } = useAuthenticationStore();
 
   const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
@@ -68,12 +70,8 @@ export function Profile() {
           onShareApp={() => {
             console.log('Share App');
           }}
-          onSignOut={() => {
-            console.log('Logout');
-          }}
-          onChangeTheme={() => {
-            changeTheme();
-          }}
+          onSignOut={signOut}
+          onChangeTheme={changeTheme}
         />
       </ColumnContainer>
       <ColumnContainer style={GlobalStyles.alignItemsCenter}>

@@ -9,6 +9,7 @@ import { Text } from '@components/Typography/Text';
 import { IStyledTheme } from '@interfaces/theme';
 import { useNavigation } from '@react-navigation/native';
 import { TAuthRoutesStack } from '@routes/auth.routes';
+import { useAuthenticationStore } from '@store/Auth';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { Image } from 'expo-image';
 import { StatusBar } from 'expo-status-bar';
@@ -25,6 +26,8 @@ export function InitialScreen() {
   const navigation = useNavigation<TAuthRoutesStack>();
   const theme = useTheme() as IStyledTheme;
   const currentTheme = theme.title;
+
+  const { signIn } = useAuthenticationStore();
 
   useEffect(() => {
     hasStoreUpdates && navigation.navigate('NewUpdateStore');
@@ -98,6 +101,7 @@ export function InitialScreen() {
             <PrimaryButton
               title="Entrar"
               style={GlobalStyles.marginVerticalSmall}
+              onPress={signIn}
             />
             <BorderlessButton
               style={GlobalStyles.marginBottomMedium}
