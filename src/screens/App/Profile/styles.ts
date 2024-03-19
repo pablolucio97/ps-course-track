@@ -1,7 +1,11 @@
-import { TouchableOpacity } from 'react-native';
+import { light } from '@themes/light';
+import { getScreenWidth } from '@utils/layout';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
 import { DefaultTheme } from 'styled-components';
 import styled, { css } from 'styled-components/native';
+
+const appTheme = light.theme;
 
 export const Container = styled.View`
   ${({ theme }: DefaultTheme) => css`
@@ -61,3 +65,10 @@ export const Button = styled(TouchableOpacity).attrs({ activeOpacity: 0.8 })`
     padding: ${theme.spacings[2]}px;
   `}
 `;
+
+export const Styles = StyleSheet.create({
+  changePasswordModal: {
+    width: getScreenWidth(),
+    padding: RFValue(appTheme.spacings[3]),
+  },
+});

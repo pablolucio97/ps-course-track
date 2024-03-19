@@ -44,21 +44,6 @@ export function MenuCard({
     },
     {
       icon: (
-        <Feather
-          name="share"
-          color={
-            theme.title === 'dark'
-              ? theme.colors.absolute_white
-              : theme.colors.absolute_black
-          }
-          size={ICON_SIZE}
-        />
-      ),
-      content: 'Compartilhar app',
-      onPress: onShareApp,
-    },
-    {
-      icon: (
         <MaterialCommunityIcons
           name="format-color-fill"
           color={
@@ -74,6 +59,21 @@ export function MenuCard({
           ? 'Mudar para o tema claro'
           : 'Mudar para o tema escuro',
       onPress: onChangeTheme,
+    },
+    {
+      icon: (
+        <Feather
+          name="share"
+          color={
+            theme.title === 'dark'
+              ? theme.colors.absolute_white
+              : theme.colors.absolute_black
+          }
+          size={ICON_SIZE}
+        />
+      ),
+      content: 'Compartilhar app',
+      onPress: onShareApp,
     },
     {
       icon: (
