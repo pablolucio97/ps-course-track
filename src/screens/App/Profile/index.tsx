@@ -6,11 +6,12 @@ import { Text } from '@components/Typography/Text';
 import { Title } from '@components/Typography/Title';
 import { useAppTheme } from '@hooks/useTheme';
 import { IStyledTheme } from '@interfaces/theme';
+import { useFocusEffect } from '@react-navigation/native';
 import { UserProfileCard } from '@screens/App/Profile/components/UserProfileCard';
 import { ColumnContainer, GlobalStyles } from '@styles/globals';
 import { getScreenHeightPercent } from '@utils/layout';
 import { StatusBar } from 'expo-status-bar';
-import { RefObject, useRef, useState } from 'react';
+import { RefObject, useCallback, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 import { Modalize } from 'react-native-modalize';
 import { SvgXml } from 'react-native-svg';
@@ -38,9 +39,19 @@ export function Profile() {
     passwordModalRef.current?.open();
   };
 
+  const closePasswordModal = () => {
+    passwordModalRef.current?.close();
+  };
+
   const navigateNextInput = (inputRef: RefObject<TextInput>) => {
     inputRef.current?.focus();
   };
+
+  useFocusEffect(
+    useCallback(() => {
+      closePasswordModal();
+    }, [])
+  );
 
   return (
     <Container>
